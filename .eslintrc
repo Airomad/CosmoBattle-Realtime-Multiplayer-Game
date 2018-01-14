@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": "off"
+  },
+  "parser": "babel-eslint"
+}

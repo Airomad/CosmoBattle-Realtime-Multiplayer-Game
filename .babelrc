@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "transform-decorators-legacy",
+    ["module-resolver", {
+      "root": ["./src"],
+      "extensions": [".js"],
+      "alias": {
+        "reducers": "./src/reducers",
+        "containers": "./src/containers",
+        "components": "./src/components",
+        "actions": "./src/actions",
+        "constants": "./src/constants"
+      }
+    }]
+  ],
+	"presets": [
+    "es2015",
+    "react",
+    "stage-2"
+  ]
+}
