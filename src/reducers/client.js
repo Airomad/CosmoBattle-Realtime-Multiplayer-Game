@@ -43,7 +43,6 @@ export default function client(state = INIT_STATE, action) {
     };
 
     case WS_GET_ERROR:
-      console.log(action.error);
       return state;
 
     default: return state;
