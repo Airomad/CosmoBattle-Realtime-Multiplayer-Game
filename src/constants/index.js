@@ -1,0 +1,3 @@
+export const MAIN_SCREEN = 'MAIN_SCREEN';
+export const PROFILER_SCREEN = 'PROFILER_SCREEN';
+export const GAME_SCREEN = 'GAME_SCREEN';

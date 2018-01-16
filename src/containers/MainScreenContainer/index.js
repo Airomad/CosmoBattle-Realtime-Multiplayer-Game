@@ -3,6 +3,7 @@ import { connection } from 'actions';
 import { connect } from 'react-redux';
 import Loading from 'react-loading-animation';
 import PropTypes from 'prop-types';
+import { GAME_SCREEN } from 'constants';
 import style from './style.scss';
 
 const mapStateToProps = state => ({
@@ -20,6 +21,12 @@ export default class MainScreenContainer extends React.Component {
     super(props);
     this.state = {
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.connected && !nextProps.connecting) {
+      this.props.onSetScreen(GAME_SCREEN);
+    }
   }
 
   connect = () => {
@@ -51,8 +58,10 @@ export default class MainScreenContainer extends React.Component {
 
 MainScreenContainer.propTypes = {
   onTryConnect: PropTypes.func.isRequired,
+  onSetScreen: PropTypes.func.isRequired,
   onSendMessage: PropTypes.func.isRequired,
   connecting: PropTypes.bool.isRequired,
+  connected: PropTypes.bool.isRequired,
   // clientName: PropTypes.string.isRequired,
 };
 
