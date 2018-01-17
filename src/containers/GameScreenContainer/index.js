@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { MAIN_SCREEN } from 'constants';
-import { CONNECTION_OPEN } from 'constants/connection';
+import { CONNECTION_OPEN, CONNECTION_CLOSED } from 'constants/connection';
 import PropTypes from 'prop-types';
 import style from './style.scss';
 
@@ -35,6 +35,10 @@ export default class GameScreenContainer extends React.Component {
 
 GameScreenContainer.propTypes = {
   onSetScreen: PropTypes.func.isRequired,
-  connectionStatus: PropTypes.number.isRequired,
+  connectionStatus: PropTypes.number,
+};
+
+GameScreenContainer.defaultProps = {
+  connectionStatus: CONNECTION_CLOSED,
 };
 

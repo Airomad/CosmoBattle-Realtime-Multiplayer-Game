@@ -45,9 +45,10 @@ export default class NetworkProfilerContainer extends React.Component {
   printConsoleLog = () => {
     const log = [];
     if (this.props.messages.length > 0) {
-      this.props.messages.map((it) => {
+      this.props.messages.map((it, index) => {
         const type = <span className={it[0] === 'GET' ? style.green : style.orange}>{it[0]}</span>;
-        return log.unshift(<div>{type} {it[1]}</div>);
+        // eslint-disable-next-line
+        return log.unshift(<div key={index}>{type} {it[1]}</div>);
       });
     }
     return log;
@@ -150,13 +151,15 @@ export default class NetworkProfilerContainer extends React.Component {
 
 NetworkProfilerContainer.propTypes = {
   onTryConnect: PropTypes.func.isRequired,
-  onSendMessage: PropTypes.func.isRequired,
-  // onSetScreen: PropTypes.func.isRequired,
-  connecting: PropTypes.bool.isRequired,
-  messages: PropTypes.arrayOf(PropTypes.string).isRequired,
-  socket: PropTypes.func.isRequired,
-  connectionStatus: PropTypes.number.isRequired,
-  // connected: PropTypes.bool.isRequired,
-  // clientName: PropTypes.string.isRequired,
+  onSendMessage: PropTypes.func,
+  messages: PropTypes.arrayOf(PropTypes.string),
+  socket: PropTypes.func,
+  connectionStatus: PropTypes.number,
 };
 
+NetworkProfilerContainer.defaultProps = {
+  onSendMessage: undefined,
+  messages: undefined,
+  socket: undefined,
+  connectionStatus: CONNECTION_CLOSED,
+};

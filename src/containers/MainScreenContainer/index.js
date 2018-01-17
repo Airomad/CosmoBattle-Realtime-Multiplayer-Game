@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import Loading from 'react-loading-animation';
 import PropTypes from 'prop-types';
 import { GAME_SCREEN } from 'constants';
-import { CONNECTION_OPEN, CONNECTION_CONNECTING } from 'constants/connection';
+import {
+  CONNECTION_OPEN,
+  CONNECTION_CONNECTING,
+  CONNECTION_CLOSED,
+} from 'constants/connection';
 
 import style from './style.scss';
 
@@ -78,6 +82,9 @@ export default class MainScreenContainer extends React.Component {
 MainScreenContainer.propTypes = {
   onTryConnect: PropTypes.func.isRequired,
   onSetScreen: PropTypes.func.isRequired,
-  connectionStatus: PropTypes.number.isRequired,
+  connectionStatus: PropTypes.number,
 };
 
+MainScreenContainer.defaultProps = {
+  connectionStatus: CONNECTION_CLOSED,
+};

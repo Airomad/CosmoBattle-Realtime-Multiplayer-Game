@@ -13,8 +13,6 @@ import style from './style.scss';
 const mapStateToProps = state => ({
   clientName: state.client.name,
   socket: state.client.socket,
-  connected: state.client.connected,
-  connecting: state.client.connecting,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -118,14 +116,10 @@ AppContainer.propTypes = {
   onTryConnect: PropTypes.func,
   socket: PropTypes.func,
   clientName: PropTypes.string,
-  connecting: PropTypes.bool,
-  connected: PropTypes.bool,
 };
 
 AppContainer.defaultProps = {
   onTryConnect: undefined,
   socket: undefined,
   clientName: null,
-  connecting: false,
-  connected: false,
 };
