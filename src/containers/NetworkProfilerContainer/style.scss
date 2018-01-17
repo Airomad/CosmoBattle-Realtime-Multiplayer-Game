@@ -65,6 +65,17 @@
       color: black;
       margin: 3px;
       border: 1px solid #22688F;
+
+      &.red {
+        background: #7F1A1A;
+        color: white;
+        border: 1px solid #360C0C;
+      }
+      &.green {
+        background: #338B26;
+        color: white;
+        border: 1px solid #1A4713;
+      }
     }
 
     .scrollable {
@@ -86,6 +97,14 @@
       margin-top: 20px;
       margin-bottom: 20px;
     }
+
+    .connectionLabel {
+      float: right;
+      margin-top: 6px;
+      margin-right: 10px;
+      font-family: 'Roboto';
+      color: #9DC1CC;
+    }
   }
 }
 
@@ -95,4 +114,8 @@
 
 .orange {
   color: orange;
+}
+
+.red {
+  color: red;
 }

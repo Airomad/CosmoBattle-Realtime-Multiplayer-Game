@@ -70,8 +70,6 @@ export default class AppContainer extends React.Component {
       case MAIN_SCREEN: return (
         <MainScreenContainer
           clientName={this.props.clientName}
-          connecting={this.props.connecting}
-          connected={this.props.connected}
           onSendMessage={this.onSendMessage}
           onTryConnect={this.props.onTryConnect}
           onSetScreen={this.onSetScreen}
@@ -80,6 +78,7 @@ export default class AppContainer extends React.Component {
       case PROFILER_SCREEN: return (
         <NetworkProfilerContainer
           onSetScreen={this.onSetScreen}
+          onTryConnect={this.props.onTryConnect}
         />
       );
       case GAME_SCREEN: return (
