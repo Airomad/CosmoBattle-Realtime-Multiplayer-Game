@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Convert a String to UTF-8 Bytes
 export default function convertToUTF8(str) {
   const utf8 = [];

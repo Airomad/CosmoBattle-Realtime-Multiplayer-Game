@@ -1,11 +1,11 @@
 import {
-  SEND_COMMAND,
+  SEND_BYTES,
   SEND_CHAT_MESSAGE,
 } from './action-types';
 
-export function sendCommand(commandID, data) {
+export function sendBytes(commandID, data) {
   return {
-    type: SEND_COMMAND,
+    type: SEND_BYTES,
     ...data,
   };
 }

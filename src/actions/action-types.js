@@ -6,5 +6,5 @@ export const WS_GET_MESSAGE = 'WS_GET_MESSAGE';
 export const WS_GET_ERROR = 'WS_GET_ERROR';
 export const WS_SEND_MESSAGE = 'WS_SEND_MESSAGE';
 
-export const SEND_COMMAND = 'SEND_COMMAND';
+export const SEND_BYTES = 'SEND_BYTES';
 export const SEND_CHAT_MESSAGE = 'SEND_CHAT_MESSAGE';

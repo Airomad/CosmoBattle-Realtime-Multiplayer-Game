@@ -2,6 +2,9 @@ import React from 'react';
 import Loading from 'react-loading-animation';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import convertToUTF8 from 'utils/convert';
+
+import { sendBytes } from 'actions/client';
 
 import {
   CONNECTION_OPEN,
@@ -21,6 +24,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onConnect: clientName => dispatch(clientName),
   onSendMessage: message => dispatch({ type: 'PROFILER_MESSAGE', message }),
+  onSendBytes: data => dispatch(sendBytes(data)),
 });
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -68,7 +72,8 @@ export default class NetworkProfilerContainer extends React.Component {
       session: 'Session',
       username: 'Username',
     });
-    this.sendMessage(packet);
+    const data = convertToUTF8(packet);
+    this.sendMessage(data);
   }
 
   sendVelocityPacket = () => {
